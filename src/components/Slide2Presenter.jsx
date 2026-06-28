@@ -1,6 +1,5 @@
-import { User } from 'lucide-react'
+import { User, Layers3 } from 'lucide-react'
 import avatarImg from '../assets/avatar.jpeg'
-import techboostLogoImg from '../assets/techboost_logo.png'
 import schoolLogoImg from '../assets/school_logo.png'
 
 export default function Slide2Presenter({ s }) {
@@ -43,14 +42,15 @@ export default function Slide2Presenter({ s }) {
 
         {/* Qualifications Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
-          <a href="https://techboostng.com" target="_blank" rel="noopener noreferrer" className={`p-4 rounded-xl ${s.glass} flex items-start gap-3 border border-white/10 hover-lift hover:border-emerald-500/30 transition`}>
-            <img src={techboostLogoImg} alt="TechBoost Logo" className="w-10 h-10 rounded object-contain shrink-0 bg-white p-1" />
-            <div>
-              <span className="font-bold block text-slate-200 hover:text-emerald-400 transition">CEO, TechBoost Nigeria</span>
-              <span className="text-xs text-slate-400 block mb-1">Empowering software developers with deep system engineering skills.</span>
-              <span className="text-[10px] text-emerald-400 font-mono underline">techboostng.com</span>
+          <div className={`p-4 rounded-xl ${s.glass} flex items-start gap-3 border border-white/10 hover-lift hover:border-emerald-500/30 transition`}>
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 border border-emerald-500/30 bg-emerald-500/10">
+              <Layers3 size={18} className="text-emerald-400" />
             </div>
-          </a>
+            <div>
+              <span className="font-bold block text-slate-200">Architecture & Systems Thinking</span>
+              <span className="text-xs text-slate-400 block">Exploring design trade-offs, scalability, reliability, and maintainability.</span>
+            </div>
+          </div>
           
           <div className={`p-4 rounded-xl ${s.glass} flex items-start gap-3 border border-white/10 hover-lift`}>
             <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=150&auto=format&fit=crop" alt="Programmer" className="w-10 h-10 rounded-lg object-cover shrink-0 border border-emerald-500/30" />

@@ -53,7 +53,7 @@ function App() {
 
   // Initialize MQTT Connection
   useEffect(() => {
-    const TOPIC = 'techboost/rigwe-slide-sync-v1'
+    const TOPIC = 'architecture/design/presentation-sync-v1'
     const client = mqtt.connect('wss://broker.emqx.io:8084/mqtt')
     
     client.on('connect', () => {
@@ -79,7 +79,7 @@ function App() {
   // Broadcast slide changes if presenter
   useEffect(() => {
     if (isPresenterRef.current && syncClient) {
-      const TOPIC = 'techboost/rigwe-slide-sync-v1'
+      const TOPIC = 'architecture/design/presentation-sync-v1'
       syncClient.publish(TOPIC, currentSlide.toString(), { retain: true })
     }
   }, [currentSlide, syncClient])
@@ -90,7 +90,7 @@ function App() {
     
     // If just turned on, instantly broadcast current slide to sync anyone waiting
     if (isPresenterRef.current && syncClient) {
-      syncClient.publish('techboost/rigwe-slide-sync-v1', currentSlide.toString(), { retain: true })
+      syncClient.publish('architecture/design/presentation-sync-v1', currentSlide.toString(), { retain: true })
     }
   }
 
@@ -290,21 +290,22 @@ function App() {
       {/* Presentation Header */}
       <header className="relative z-10 px-6 py-4 flex items-center justify-between border-b border-white/5 backdrop-blur-sm">
         <div className="flex items-center gap-3">
-          {/* TechBoost Custom SVG Logo */}
+          {/* Architecture Design Logo */}
           <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
-            <svg viewBox="0 0 100 100" className="w-6 h-6 fill-none stroke-[10] stroke-emerald-500" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="30" cy="30" r="12" className="stroke-emerald-400 fill-emerald-400/20" />
-              <path d="M 30 42 L 30 70 A 15 15 0 0 0 60 70 L 60 50 A 10 10 0 0 1 80 50" />
-              <circle cx="80" cy="50" r="8" className="stroke-emerald-300 fill-emerald-300" />
-              <line x1="30" y1="70" x2="60" y2="70" />
+            <svg viewBox="0 0 100 100" className="w-6 h-6 fill-none stroke-[8] stroke-emerald-500" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="20" y="26" width="24" height="34" rx="4" className="stroke-emerald-400 fill-emerald-400/20" />
+              <rect x="52" y="16" width="24" height="44" rx="4" className="stroke-emerald-400 fill-emerald-400/20" />
+              <path d="M28 56h8" />
+              <path d="M60 34h8" />
+              <path d="M60 46h6" />
             </svg>
           </div>
           <div>
             <span className="font-display font-bold tracking-tight text-sm md:text-base">
-              SYSTEMS <span className="text-emerald-500 font-extrabold">ACADEMY</span>
+              ARCHITECTURE <span className="text-emerald-500 font-extrabold">DESIGN</span>
             </span>
             <span className={`block text-[10px] uppercase tracking-wider ${s.textMuted} font-semibold`}>
-              Mastering System Analysis & Design
+              Mastering Architecture Decisions
             </span>
           </div>
         </div>
