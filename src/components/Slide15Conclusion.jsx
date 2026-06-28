@@ -67,15 +67,15 @@ export default function Slide15Conclusion({ s }) {
           </div>
           <div>
             <span className="text-xs font-bold text-slate-200 block">Presenter: Daniel Turu</span>
-            <a href="https://techboostng.com" target="_blank" rel="noopener noreferrer" className="text-[10px] text-slate-400 hover:text-emerald-400 transition block">
-              CEO, TechBoost Nigeria (techboostng.com)
-            </a>
+            <span className="text-[10px] text-slate-400 block">
+              Software engineer and technical educator
+            </span>
           </div>
         </div>
 
         <div className="flex items-center gap-1.5 text-xs text-slate-400 bg-black/30 border border-white/5 px-3 py-1.5 rounded-lg">
           <BookOpen size={12} className="text-emerald-400" />
-          <span>Systems Academy &copy; {new Date().getFullYear()}</span>
+          <span>Architecture Design Presentation &copy; {new Date().getFullYear()}</span>
         </div>
       </div>
     </div>
